@@ -1,3 +1,6 @@
+from src.extentions import db
+from src.models.alumnos_materias import alumnos_materias
+from src.models.alumnos_avisos import alumnos_avisos
 
 class Alumnos(db.Model):
     id = db.Column(db.Integer, primary_key=True)
