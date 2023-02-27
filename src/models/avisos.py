@@ -1,3 +1,5 @@
+from src.extentions import db
+
 class Avisos(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     titulo = db.Column(db.String(50))

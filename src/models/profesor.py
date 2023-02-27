@@ -1,3 +1,5 @@
+from src.extentions import db
+
 class Profesor(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name_profesor = db.Column(db.String(20))

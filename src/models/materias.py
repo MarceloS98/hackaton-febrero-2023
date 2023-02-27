@@ -1,3 +1,5 @@
+from src.extentions import db
+
 class Materias(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name_materia = db.Column(db.String(20))

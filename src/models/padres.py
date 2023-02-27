@@ -1,3 +1,6 @@
+from src.extentions import db
+from src.models.padres_avisos import padres_avisos
+
 class Padres(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name_padres = db.Column(db.String(50))
