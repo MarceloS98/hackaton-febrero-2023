@@ -17,6 +17,14 @@ def create_app(config_class=Config):
         from src.models.padres import Padres
         from src.models.profesor import Profesor
 
+        # user_padre = Padres.query.get(int(user_id))
+        # user_profe = Profesor.query.get(int(user_id))
+        
+        # user = user_padre or user_profe
+
+        # return user
+
+
     # Modelos
     from src.models.alumnos import Alumnos
     from src.models.avisos import Avisos
@@ -33,5 +41,15 @@ def create_app(config_class=Config):
 
     from src.blueprints.profesores import bp as profesores_bp
     app.register_blueprint(profesores_bp, url_prefix='/profesores')
+
+    # Cargar datos en la db
+    tamara = Profesor(name='Tamara Cantero', rol= 'profesor', ci=5975992, grupo='5A', password='tammy')
+    diego = Padres(name='Diego Evers', nro_contacto='971777409', rol='padre',  ci=971777409, password='diego')
+
+    with app.app_context():
+        db.create_all()
+        # db.session.add_all([tamara, diego])
+        # db.session.commit()
+
 
     return app

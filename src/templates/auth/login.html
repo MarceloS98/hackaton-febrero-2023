@@ -1,0 +1,57 @@
+{% extends "base.html" %} 
+{% block content %}
+<div>
+  <div>
+    
+    <div class="font-sans">
+      <div class="flex flex-wrap min-h-screen sm:justify-center items-center h-full bg-gradient-to-tl from-purple-500 via-teal-600 to-purple-500 w-full py-16 px-4"> 
+          <!--agrego flex + flex-wrapgit y saque back bground gris, agg bg- degradado-->
+          <div class="relative sm:max-w-sm w-full h-full ">
+              <div style="background-image: url('https://i.pinimg.com/originals/4a/66/38/4a6638db27116da54fd59b14a2d5c802.jpg');" class="flex-auto card bg-white-400 shadow-lg  w-full  h-full rounded-3xl absolute  transform -rotate-3"></div>
+              <div style="background-image: url('https://i.pinimg.com/originals/4a/66/38/4a6638db27116da54fd59b14a2d5c802.jpg');" class="flex-auto card bg-gradient-to-t shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-3"></div>
+              <!-- div form -->
+              <form method="POST">
+              <div  class="relative w-full h-full rounded-3xl  px-10 py-20 bg-indigo-200 shadow-md">
+                  <br> </br>
+                  <img class="h-[100px] w-[100px] mx-auto mb-0"  src="https://cdn-icons-png.flaticon.com/512/5304/5304799.png" alt="google Logo" />
+  
+                    <label 
+                        
+                        class="block mt-0 text-3xl text-black text-center font-bold">
+                        Mbo'eha
+                    </label>
+                    
+                    {% with messages = get_flashed_messages() %} {% if messages %}
+                    <div class="bg-red-500 p-5 mt-5">{{ messages[0] }}</div>
+                    {% endif %} {% endwith %}
+                    <div class="space-y-4 mt-10">
+                        <input type="text" name="ci" autofocus="" placeholder="Ingrese su numero de CI" class="block text-sm py-3 px-4 rounded-lg w-full border outline-none" />
+                        <input type="password" name="password" placeholder="Ingrese su contraseña" class="block text-sm py-3 px-4 rounded-lg w-full border outline-none" />
+                    </div>
+
+                    <div class="text-center">
+                        <button class="py-3 w-64 text-xl text-white bg-emerald-600 rounded-2xl center m-5">Ingresar</button>
+                    </div>
+
+                 
+                    <div class="text-center ">
+                    <p class="mt-4 my-0 text-sm">Has olvidado tu contraseña? <span class="underline cursor-pointer"> Presiona aquí</span>
+                     </p>
+                    </div>
+   
+                   <br> </br>
+
+              </div>
+              <!-- closing div form -->
+              </form>        
+                 
+              </div>
+              </div>
+          </div>
+      </div>
+    </div>
+      
+    </div>
+  </div>
+</div> 
+{% endblock %}

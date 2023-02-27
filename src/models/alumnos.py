@@ -6,8 +6,7 @@ class Alumnos(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name_alumno = db.Column(db.String(20))
     ci_alumno = db.Column(db.Integer())
-    seccion_alumno = db.Column(db.String(10))
-    curso = db.Column(db.String(10))
+    grupo = db.Column(db.String(10))
    
     #conexion de profesor y alumnos
     profesor_id = db.Column(db.Integer, db.ForeignKey('profesor.id'))
