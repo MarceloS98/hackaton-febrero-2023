@@ -10,3 +10,4 @@ def profes_home():
         return 'Pagina para Profesores'
     else:
         return redirect(url_for('padres.padres_home'))
+
