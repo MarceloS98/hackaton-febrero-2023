@@ -17,53 +17,31 @@ def login_validator():
     user_padre = Padres.query.filter_by(ci=ci).first()
     user_profe = Profesor.query.filter_by(ci=ci).first()
     
-    user = user_padre or user_profe
-    
+    # El user puede ser un padre o un profesor
+    user = user_padre or user_profe    
+
     # Chequea si el usuario existe
-    # toma el user-supplied password, hashea, y lo compara con la contrasenha hasheada en la base de datos
     if not user:
         flash('Please check your login details and try again.')
-    
+    # Si la contraseña es incorrecta
     elif password != user.password: 
         flash('Please check your login details and try again.')
-    
-        # return redirect(url_for('bp.login')) # if the user doesn't exist or password is wrong, reload the page
+    # Si el usuario existe y la contraseña es correcta
     else:
+        # Si el usuario es un padre
         if password == user.password and user.rol == 'padre':
             login_user(user)
-            print(current_user)
-            print('hola')
-            return redirect(url_for('auth.padres_login'))
-            
-
+            print('Este es el current user', current_user)
+            return redirect(url_for('padres.padres_home'))
+        # Si el usuario es un profesor
         elif password == user.password and user.rol == 'profesor':
             login_user(user)
-            print(current_user)
-            return redirect(url_for('auth.profe_login'))
-        # if the above check passes, then we know the user has the right credentials
+            print('Este es el current user', current_user)
+            return redirect(url_for('profesores.profes_home'))
 
-    
-    
-    return render_template('auth/login.html')
-
-@bp.route('/profe')
-@login_required
-def profe_login():
-
-        return 'Pagina para Profesores'
-
-@bp.route('/padres')
-@login_required
-def padres_login():
-    return 'Pagina para padres'
-
-
-
-    
-
+# Ruta para salir de la sesion
 @bp.route('/logout')
-@login_required                        #el usuario debe estar logeado para poder salir
+@login_required #el usuario debe estar logeado para poder salir
 def logout():
     logout_user()
     return redirect(url_for('auth.login'))
-

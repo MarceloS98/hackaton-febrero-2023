@@ -1,8 +1,9 @@
+import uuid
 from flask_login import UserMixin
 from src.extentions import db
 
 class Profesor(UserMixin,db.Model):
-    id = db.Column(db.Integer, primary_key = True)
+    profesor_id = db.Column(db.String(32), primary_key = True, default=str(uuid.uuid4()))
     name = db.Column(db.String(20))
     rol = db.Column(db.String(20))
     ci = db.Column(db.Integer())
@@ -15,3 +16,8 @@ class Profesor(UserMixin,db.Model):
     avisos = db.relationship('Avisos', backref='profesor')
     # conexion entre profesor y materias
     materias = db.relationship('Materias', backref='profesor')
+
+    def get_id(self):
+        return str(self.profesor_id)
+
+

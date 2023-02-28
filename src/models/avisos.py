@@ -6,7 +6,7 @@ class Avisos(db.Model):
     cuerpo = db.Column(db.String(250))
 
     #conexion entre avisos  y profesor
-    profesor_id = db.Column(db.Integer, db.ForeignKey('profesor.id'))
+    profesor_id = db.Column(db.Integer, db.ForeignKey('profesor.profesor_id'))
 
     def __repr__(self):
         return f'<Avisos: {self.titulo, self.cuerpo}'
