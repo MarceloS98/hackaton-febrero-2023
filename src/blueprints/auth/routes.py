@@ -23,9 +23,11 @@ def login_validator():
     # Chequea si el usuario existe
     if not user:
         flash('Please check your login details and try again.')
+        return redirect(url_for('auth.login_validator'))
     # Si la contraseña es incorrecta
     elif password != user.password: 
         flash('Please check your login details and try again.')
+        return redirect(url_for('auth.login_validator'))
     # Si el usuario existe y la contraseña es correcta
     else:
         # Si el usuario es un padre
@@ -37,7 +39,7 @@ def login_validator():
         elif password == user.password and user.rol == 'profesor':
             login_user(user)
             print('Este es el current user', current_user)
-            return redirect(url_for('profesores.profes_home'))
+            return redirect(url_for('profesores.bienvenido_profesor'))
 
 # Ruta para salir de la sesion
 @bp.route('/logout')

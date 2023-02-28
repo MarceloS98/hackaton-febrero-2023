@@ -1,1 +1,107 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Profes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- A partir de aqui metanle el body de la pagina -->
+    <div class="font-sans">
+      <div
+        class="flex flex-wrap min-h-screen sm:justify-center items-center h-full bg-gradient-to-tl from-purple-500 via-teal-600 to-purple-500 w-sm py-16 px-4"
+      >
+        <!--agrego flex + flex-wrapgit y saque back bground gris, agg bg- degradado-->
+        <div class="relative sm:max-w-sm w-full h-full">
+          <div
+            style="
+              background-image: url('https://img.freepik.com/vector-premium/hoja-cuaderno_9594-5.jpg');
+            "
+            class="flex-auto card bg-blue-300 shadow-lg w-full h-full rounded-3xl absolute transform -rotate-3"
+          ></div>
+          <div
+            class="relative w-full h-full rounded-3xl px-10 py-20 bg-indigo-200 shadow-md"
+          >
+            <h1
+              class="block mt-0 text-3xl text-black-600 text-center font-bold"
+            >
+              Menú de Profesores
+            </h1>
+            <br />
+            <img
+              class="h-[100px] w-[100px] mt-4 mx-auto mb-0"
+              src="https://cdn-icons-png.flaticon.com/512/1209/1209155.png?w=740&t=st=1677443223~exp=1677443823~hmac=2c97136af825ebd73daf97061119761a0b3f7d2dfa85145ead282e96c28fb71a"
+              alt="Logo Aviso"
+            />
+
+            <!-- Padre -->
+            <div class="mt-7 flex flex-col text-center gap-4">
+              <!-- Boton Crear Avisos -->
+              <a
+                href="{{ url_for('profesores.crear_aviso')}}"
+                class="block relative bg-emerald-400 text-black w-full py-3 rounded-xl shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
+              >
+                <div class="flex flex-col gap-1 justify-center items-center">
+                  <div class="w-10 h-10 flex-shrink-0 ml-2 mr-2 sm:mr-3">
+                    <img
+                      class="rounded-t-full"
+                      src="https://cdn-icons-png.flaticon.com/512/921/921545.png?w=740&t=st=1677447730~exp=1677448330~hmac=6105eaf22e2e432bb40d9d25329f1d19256869267c0ab3ec64ce825687106863"
+                      width="60"
+                      height="60"
+                      alt="Imagen Crear Avisos"
+                    />
+                  </div>
+                </div>
+                Crear Avisos
+              </a>
+              <a
+                href="#"
+                class="block relative bg-emerald-400 text-black w-full py-3 rounded-xl shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
+              >
+                <div class="flex flex-col gap-1 justify-center items-center">
+                  <div class="w-10 h-10 flex-shrink-0 ml-2 mr-2 sm:mr-3">
+                    <img
+                      class="rounded-t-full"
+                      src="https://cdn-icons-png.flaticon.com/512/888/888687.png?w=740&t=st=1677447606~exp=1677448206~hmac=5c73996b7ef29dc6525742b4a2a916e82e1f32fb71949c8d0ded1debe340580f"
+                      width="60"
+                      height="60"
+                      alt="Imagen Crear Avisos"
+                    />
+                  </div>
+                </div>
+                Ver Avisos
+              </a>
+              <a
+                href="#"
+                class="block relative bg-emerald-400 text-black w-full py-3 rounded-xl shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
+              >
+                <div class="flex flex-col gap-1 justify-center items-center">
+                  <div class="w-10 h-10 flex-shrink-0 ml-2 mr-2 sm:mr-3">
+                    <img
+                      class="rounded-t-full"
+                      src="https://cdn-icons-png.flaticon.com/512/1250/1250544.png?w=740&t=st=1677592380~exp=1677592980~hmac=a2b4abad8334f071ff1d5347a27d9c464d1a1db8e0598a438285b7024c20ba80"
+                      width="60"
+                      height="60"
+                      alt="Imagen Crear Avisos"
+                    />
+                  </div>
+                </div>
+                Cargar Planillas
+              </a>
+              <br />
+            </div>
+            <br />
+            <a
+              href="{{ url_for('profesores.bienvenido_profesor')}}"
+              class="block bg-emerald-400 py-3 w-32 rounded-2xl shadow-xl hover:shadow-inner focus:outline-none text-center transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
+            >
+              Volver Atras
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

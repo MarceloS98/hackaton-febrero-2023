@@ -40,8 +40,8 @@ def create_app(config_class=Config):
     # diego = Padres(name='Diego Evers', nro_contacto='971777409', rol='padre',  ci=971777409, password='diego')
 
     # with app.app_context():
-    #     db.create_all()
-        # db.session.add_all([tamara, diego])
-        # db.session.commit()
+    #      db.create_all()
+    #      db.session.add_all([tamara, diego])
+    #      db.session.commit()
 
     return app
