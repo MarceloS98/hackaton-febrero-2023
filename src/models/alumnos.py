@@ -15,10 +15,10 @@ class Alumnos(db.Model):
 
 
     # alumnos/materias
-    materias = db.relationship('Materias', secondary=alumnos_materias, backref='followers')
+    materias = db.relationship('Materias', secondary=alumnos_materias, backref='materias')
 
     # alumnos/avisos
-    avisos = db.relationship('Avisos', secondary=alumnos_avisos, backref='followers')
+    avisos = db.relationship('Avisos', secondary=alumnos_avisos, backref='avisos')
 
     def __repr__(self):
         return f'<Alumno: {self.name_alumno, self.ci_alumno, self.grupo}>'

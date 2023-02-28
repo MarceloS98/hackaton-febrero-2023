@@ -23,10 +23,10 @@ def create_app(config_class=Config):
     app.register_blueprint(auth_bp)
 
     from src.blueprints.padres import bp as padres_bp
-    app.register_blueprint(padres_bp, url_prefix='/padres')
+    app.register_blueprint(padres_bp)
 
     from src.blueprints.profesores import bp as profesores_bp
-    app.register_blueprint(profesores_bp, url_prefix='/profesores')
+    app.register_blueprint(profesores_bp)
 
     # Login manager
     @login_manager.user_loader
@@ -36,37 +36,7 @@ def create_app(config_class=Config):
         return padre or profesor
 
     # Cargar datos en la db
-    # tamara = Profesor(name='Tamara Cantero', rol= 'profesor', ci=5975992, grupo='5A', password='tammy')
-    # diego = Padres(name='Diego Evers', nro_contacto='971777409', rol='padre',  ci=971777409, password='diego')
 
-    # adrian = Alumnos(name_alumno='Adrian Mendoza', ci_alumno=5706998, grupo='5A')
-    # maria = Alumnos(name_alumno='Maria Lopez', ci_alumno=5754398, grupo='5B')
-    # ramiro= Alumnos(name_alumno='Ramiro Perez', ci_alumno=5304598, grupo='5A')
-    # alba= Alumnos(name_alumno='Alba Marin', ci_alumno=5123908, grupo='5B')
-    # pablo= Alumnos(name_alumno='Pablo Gonzalez', ci_alumno=5419853, grupo='5A')
-    # ariana= Alumnos(name_alumno='Pedro Escobar', ci_alumno=5706999, grupo='5B')
-    # jana = Alumnos(name_alumno='Jana Ferreira', ci_alumno=5777456, grupo='5A')
-    # pedro = Alumnos(name_alumno='Pedro Villalba', ci_alumno=5706432, grupo='5B')
-    # sol = Alumnos(name_alumno='Sol Acosta', ci_alumno=5899432, grupo='5A')
-    # esteban = Alumnos(name_alumno='Esteban Martinez', ci_alumno=6896998, grupo='5B')
-    # carlos = Alumnos(name_alumno='Carlos Ortiz', ci_alumno=6344876, grupo='5A')
-    # mariana= Alumnos(name_alumno='Mariana Ramirez', ci_alumno=5998886, grupo='5B')
-    # alex= Alumnos(name_alumno='Alex Colman', ci_alumno=5667899, grupo='5A')
-    # luis = Alumnos(name_alumno='Luis Montez', ci_alumno=5543345, grupo='5B')
-    # israel = Alumnos(name_alumno='Israel Gimenez', ci_alumno=5988798, grupo='5A')
-    # horacio = Alumnos(name_alumno='Horacio da Silva', ci_alumno=6543298, grupo='5B')
-    # angelica = Alumnos(name_alumno='Angelica Martinetti', ci_alumno=7897654, grupo='5A')
-    # sofia = Alumnos(name_alumno='Sofia Toffoletti', ci_alumno=6788769, grupo='5B')
-    # blas = Alumnos(name_alumno='Blas Evers', ci_alumno=6543998, grupo='5A')
-    # sebastian = Alumnos(name_alumno='Sebastian Alonso', ci_alumno=5232328, grupo='5B')
-    # helga= Alumnos(name_alumno='Helga Miers', ci_alumno=5566775, grupo='5A')
-    # angeles = Alumnos(name_alumno='Angeles Segovia', ci_alumno=4567876, grupo='5B')
-    # patricio = Alumnos(name_alumno='Patricio Estigarribia', ci_alumno=5997799, grupo='5A')
-
-    # with app.app_context():
-    #     db.create_all()
-    #     db.session.add_all([adrian, maria, ramiro, alba, pablo, ariana, jana, pedro, sol, esteban, carlos, mariana, alex, luis, israel, horacio, angelica, sofia, blas, sebastian, helga, angeles, patricio])
-    #     db.session.commit()
     # adrian = Alumnos(name_alumno='Adrian Mendoza', ci_alumno=5706998, grupo='5A')
     # maria = Alumnos(name_alumno='Maria Lopez', ci_alumno=5754398, grupo='5B')
     # ramiro= Alumnos(name_alumno='Ramiro Perez', ci_alumno=5304598, grupo='5A')
@@ -103,9 +73,10 @@ def create_app(config_class=Config):
 
 
     # with app.app_context():
-    # #     # db.create_all()
-    #     db.session.add_all([aviso1, aviso2, aviso3, aviso4])
-    #     db.session.commit()
+    #     db.create_all()
+    #     db.session.add_all([adrian, maria, ramiro, alba, pablo, ariana, jana, pedro, sol, esteban, carlos, mariana, alex, luis, israel, horacio, angelica, sofia, blas, sebastian, helga, angeles, patricio])
+        # db.session.add_all([aviso1, aviso2, aviso3, aviso4])
+        # db.session.commit()
 
 
     return app
