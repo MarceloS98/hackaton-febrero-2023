@@ -22,11 +22,11 @@ def login_validator():
 
     # Chequea si el usuario existe
     if not user:
-        flash('Please check your login details and try again.')
+        flash('Verifique sus datos y vuelva a intentarlo.')
         return redirect(url_for('auth.login_validator'))
     # Si la contraseña es incorrecta
     elif password != user.password: 
-        flash('Please check your login details and try again.')
+        flash('Verifique sus datos y vuelva a intentarlo.')
         return redirect(url_for('auth.login_validator'))
     # Si el usuario existe y la contraseña es correcta
     else:
