@@ -2,7 +2,6 @@ import random
 from flask import Flask 
 from config import Config
 from src.extentions import db, login_manager
-#from sqlalchemy import select, bindparam
 
 def create_app(config_class=Config):
 

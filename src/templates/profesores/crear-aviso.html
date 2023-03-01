@@ -28,27 +28,23 @@
                         class="block mt-0 text-3xl text-black text-center font-bold font-serif">
                             Crear aviso
                     </label>
-            
-                    <div class="space-y-4 m mt-10">
-                        <input type="text" placeholder="Ingresa un titulo para el aviso" class="block text-sm py-3 px-4 rounded-lg w-full border outline-none" />
+                    <form action="crear-aviso" method="post">
                         
-                        <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border" placeholder="Escribe el aviso que deseas enviar"></textarea>
-
-                        <input type="text" placeholder="Firma" class="block text-sm py-3 px-4 rounded-lg w-full border outline-none" />
-                    </div>
-
-                    <div class="flex flex-nowrap">
-                        <a href="{{url_for('profesores.menu_profe')}}" class="block text-center py-3 w-40 text-xl bg-emerald-400 text-black rounded-2xl shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105 center m-2 my-5">Volver</a>
-                        <a href="{{url_for('profesores.seleccionar_estudiantes')}}" class="block text-center py-3 w-40 text-xl bg-emerald-400 text-black rounded-2xl shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105 center m-2 my-5">Enviar a</a>
-                    </div>
-
-                
-                
-                
-
-                        <br> </br>
+                        <div class="space-y-4 m mt-10">
+                            <input type="text" name="titulo" placeholder="Ingresa un titulo para el aviso" class="block text-sm py-3 px-4 rounded-lg w-full border outline-none" />
+                            
+                            <textarea id="message" name="cuerpo" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border" placeholder="Escribe el aviso que deseas enviar"></textarea>
+                            
+                            <input type="text" name="firma" placeholder="Firma" class="block text-sm py-3 px-4 rounded-lg w-full border outline-none" />
+                        </div>
                         
+                        <div class="flex flex-nowrap">
+                            <a href="{{url_for('profesores.menu_profe')}}" class="block text-center py-3 w-40 text-xl bg-emerald-400 text-black rounded-2xl shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105 center m-2 my-5">Volver</a>
+                            <button class="block text-center py-3 w-40 text-xl bg-emerald-400 text-black rounded-2xl shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105 center m-2 my-5">Enviar a</button>
+                        </div>
                     </form>
+                        
+                        <br> </br>
                 </div>
             </div>
         </div>

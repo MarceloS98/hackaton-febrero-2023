@@ -30,78 +30,27 @@
                         class="block mt-1 mb-16 text-4xl text-black text-center font-bold">
                         Selecciona estudiantes
                     </label>
-
+                  <form action="estudiantes-avisos" method="post">  
                     <fieldset>
-                        
                         <div class="mt-4 mb-30 h-60 divide-y divide-gray-200 border-t border-b border-gray-200 overflow-y-scroll">
-                          <div class="relative flex items-start py-4">
-                            <div class="min-w-0 flex-1 text-sm">
-                              <label for="person-1" class="select-none font-medium text-gray-700">Julia Zarate</label>
-                            </div>
-                            <div class="ml-3 flex h-5 items-center">
-                              <input id="person-1" name="person-1" type="checkbox" class="h-4 w-4 mr-1.5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                            </div>
-                          </div>
-                      
-                          <div class="relative flex items-start py-4">
-                            <div class="min-w-0 flex-1 text-sm">
-                              <label for="person-2" class="select-none font-medium text-gray-700">Rebeca Almiron</label>
-                            </div>
-                            <div class="ml-3 flex h-5 items-center">
-                              <input id="person-2" name="person-2" type="checkbox" class="h-4 w-4 mr-2 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                            </div>
-                          </div>
-                      
-                          <div class="relative flex items-start py-4">
-                            <div class="min-w-0 flex-1 text-sm">
-                              <label for="person-3" class="select-none font-medium text-gray-700">Juan Perez</label>
-                            </div>
-                            <div class="ml-3 flex h-5 items-center">
-                              <input id="person-3" name="person-3" type="checkbox" class="h-4 w-4 mr-2 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                            </div>
-                          </div>
-                      
-                          <div class="relative flex items-start py-4">
-                            <div class="min-w-0 flex-1 text-sm">
-                              <label for="person-4" class="select-none font-medium text-gray-700">Benigno Lopez</label>
-                            </div>
-                            <div class="ml-3 flex h-5 items-center">
-                              <input id="person-4" name="person-4" type="checkbox" class="h-4 w-4 mr-2 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                            </div>
-                          </div>
 
+                          {% for alumno in alumnos %}
                           <div class="relative flex items-start py-4">
                             <div class="min-w-0 flex-1 text-sm">
-                              <label for="person-4" class="select-none font-medium text-gray-700">Benigno Lopez</label>
+                              <label for="{{ alumno.id }}" class="select-none font-medium text-gray-700">{{ alumno.name_alumno }}</label>
                             </div>
                             <div class="ml-3 flex h-5 items-center">
-                              <input id="person-4" name="person-4" type="checkbox" class="h-4 w-4 mr-2 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                              <input id="{{ alumno.id }}" name="alumnos" value="{{ alumno.padres.nro_contacto }}" type="checkbox" class="h-4 w-4 mr-1.5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                             </div>
                           </div>
-
-                          <div class="relative flex items-start py-4">
-                            <div class="min-w-0 flex-1 text-sm">
-                              <label for="person-4" class="select-none font-medium text-gray-700">Benigno Lopez</label>
-                            </div>
-                            <div class="ml-3 flex h-5 items-center">
-                              <input id="person-4" name="person-4" type="checkbox" class="h-4 w-4 mr-2 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                            </div>
-                          </div>
-                      
-                          <div class="relative flex items-start py-4">
-                            <div class="min-w-0 flex-1 text-sm">
-                              <label for="person-5" class="select-none font-medium text-gray-700">Gloria Salcedo</label>
-                            </div>
-                            <div class="ml-3 flex h-5 items-center">
-                              <input id="person-5" name="person-5" type="checkbox" class="h-4 w-4 mr-2 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                            </div>
-                          </div>
+                          {% endfor %}
                         </div>
                       </fieldset>
                     <div class="flex flex-nowrap">
                         <a href="{{url_for('profesores.crear_aviso')}}" class="block text-center py-3 w-40 text-xl text-white bg-emerald-600 rounded-2xl center m-2 my-10">Volver</a>
-                        <a href="{{url_for('profesores.aviso_enviado')}}" class="block text-center py-3 w-40 text-xl text-white bg-emerald-600 rounded-2xl center m-2 my-10">Enviar</a>
+                        <button class="block text-center py-3 w-40 text-xl text-white bg-emerald-600 rounded-2xl center m-2 my-10">Enviar</button>
                     </div>
+                  </form>
                 </div>
 
             </div>

@@ -17,4 +17,4 @@ class Materias(db.Model):
     profesor_id = db.Column(db.Integer, db.ForeignKey('profesor.profesor_id'))
 
     def __repr__(self):
-        return f'<Materias: {self.name_materia, self.etapa_1, self.etapa_2, self.promedio_final}'
+        return f'<Materias: {self.name, self.etapa_1, self.etapa_2, self.promedio_final}'

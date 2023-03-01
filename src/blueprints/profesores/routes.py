@@ -1,48 +1,109 @@
+from flask import request
 from src.blueprints.profesores import bp
-from flask import redirect, url_for, render_template
+from flask import redirect, url_for, render_template, request
 from flask_login import login_required, current_user
+from src.models.avisos import Avisos
+from src.utils.send_message import send_sms
+from credentials import account_sid, auth_token
+
 
 @bp.route('/')
+@login_required
 def bienvenido_profesor():
-    print(current_user.rol)
     if current_user.rol == 'profesor':
-         return render_template('profesores/bienvenida.html')
+         return render_template('profesores/bienvenida.html', name=current_user.name, grupo=current_user.grupo)
     else:
         return redirect(url_for('padres.padres_home'))
 
-@bp.route('/crear-aviso')
+@bp.route('/crear-aviso', methods=['GET', 'POST'])
+@login_required
 def crear_aviso():
-    return render_template('profesores/crear-aviso.html')
+    if current_user.rol == 'profesor':
+        if request.method == 'POST':
+            titulo = request.form['titulo']
+            cuerpo = request.form['cuerpo']
 
-@bp.route('/estudiantes-avisos')
+            aviso = Avisos(titulo=titulo, cuerpo=cuerpo, profesor=current_user)
+
+            print(aviso)
+
+            return redirect(url_for('profesores.estudiantes_avisos'))
+
+        return render_template('profesores/crear-aviso.html')    
+    else:
+        return redirect(url_for('padres.padres_home'))
+        
+
+@bp.route('/estudiantes-avisos', methods=['GET', 'POST'])
+@login_required
 def estudiantes_avisos():
-    return render_template('profesores/estudiantes-avisos.html')
+    if current_user.rol == 'profesor':
+
+        if request.method == 'POST':
+            nro_padre_alumno = request.form.getlist('alumnos')[0]
+            
+            send_sms( account_sid=account_sid, auth_token=auth_token ,to_number='+595972589778', body='Prueba de twilio')
+
+            return redirect(url_for('profesores.aviso_enviado'))
+
+        return render_template('profesores/estudiantes-avisos.html', alumnos=current_user.alumnos)
+    else:
+        return redirect(url_for('padres.padres_home'))
 
 @bp.route('/menu-profe')
+@login_required
 def menu_profe():
-    return render_template('profesores/menu-profe.html')
+    if current_user.rol == 'profesor':
+        return render_template('profesores/menu-profe.html')
+    else:
+        return redirect(url_for('padres.padres_home'))
 
 @bp.route('/enviados-avisos')
+@login_required
 def enviados_avisos():
-    return render_template('profesores/enviados-avisos.html')
+    print(current_user.avisos)
+    if current_user.rol == 'profesor':
+        return render_template('profesores/enviados-avisos.html')
+    else:
+        return redirect(url_for('padres.padres_home'))
 
 @bp.route('/estudiantes-avisos')
+@login_required
 def seleccionar_estudiantes():
-    return render_template('profesores/estudiantes-avisos.html')
+    if current_user.rol == 'profesor':
+        return render_template('profesores/estudiantes-avisos.html')
+    else:
+        return redirect(url_for('padres.padres_home'))
 
 @bp.route('/check-avisos')
+@login_required
 def aviso_enviado():
-    return render_template('profesores/check-avisos.html')
+    if current_user.rol == 'profesor':
+        return render_template('profesores/check-avisos.html')
+    else:
+        return redirect(url_for('padres.padres_home'))
 
 @bp.route('/libreta-profesor')
+@login_required
 def libreta_profesor():
-    return render_template('profesores/libreta-profesor.html')
+    if current_user.rol == 'profesor':
+        return render_template('profesores/libreta-profesor.html')
+    else:
+        return redirect(url_for('padres.padres_home'))
 
 @bp.route('/check-libreta')
+@login_required
 def libreta_guardada():
-    return render_template('profesores/check-libreta.html')
+    if current_user.rol == 'profesor':
+        return render_template('profesores/check-libreta.html')
+    else:
+        return redirect(url_for('padres.padres_home'))
 
 @bp.route('/plantilla-estudiantes')
+@login_required
 def seleccionar_estudiantes2():
-    return render_template('profesores/plantilla-estudiante.html')
+    if current_user.rol == 'profesor':
+        return render_template('profesores/plantilla-estudiante.html')
+    else:
+        return redirect(url_for('padres.padres_home'))
 

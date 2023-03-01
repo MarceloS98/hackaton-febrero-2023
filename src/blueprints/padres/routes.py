@@ -5,21 +5,32 @@ from flask_login import login_required, current_user
 @bp.route('/')
 @login_required
 def padres_home():
-    print(current_user.name)
     if current_user.rol == 'padre':
         return render_template('padres/padres-menu.html')
     else:
-        return redirect(url_for('profesores/menu-profe.html'))
+        return redirect(url_for('profesores.bienvenido_profesor'))
     
 @bp.route('/padres-menu')
+@login_required
 def padres_menu():
-    return render_template('padres/padres-menu.html')
+    if current_user.rol == 'padre':
+        return render_template('padres/padres-menu.html')
+    else:
+        return redirect(url_for('profesores.bienvenido_profesor'))
 
 @bp.route('/padres-libreta')
+@login_required
 def padres_libreta():
-    return render_template('padres/padres-libreta.html')
+    if current_user.rol == 'padre':    
+        return render_template('padres/padres-libreta.html', materias=current_user.hijo.materias, hijo=current_user.hijo.name_alumno)
+    else:
+        return redirect(url_for('profesores.bienvenido_profesor'))
 
 @bp.route('/padres-avisos')
+@login_required
 def padres_avisos():
-    return render_template('padres/recibidos-avisos.html')
+    if current_user.rol == 'padre':
+        return render_template('padres/recibidos-avisos.html')
+    else:
+        return redirect(url_for('profesores.bienvenido_profesor'))
 
