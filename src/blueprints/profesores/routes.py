@@ -18,8 +18,6 @@ def menu_profe(curso):
     # return "este es el curso: {0}".format(curso)
     return render_template('profesores/menu-profe.html')
 
-
-
 @bp.route('/profesores/<curso>/crear-aviso')
 def crear_aviso(curso):
     # return "este es el curso: {0}".format(curso)
