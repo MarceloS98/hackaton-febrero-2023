@@ -3,7 +3,7 @@ from flask_login import UserMixin
 from src.extentions import db
 
 class Profesor(UserMixin,db.Model):
-    profesor_id = db.Column(db.String(32), primary_key = True, default=str(uuid.uuid4()))
+    profesor_id = db.Column(db.String(32), primary_key=True, default=str(uuid.uuid4()))
     name = db.Column(db.String(20))
     rol = db.Column(db.String(20))
     ci = db.Column(db.Integer())
