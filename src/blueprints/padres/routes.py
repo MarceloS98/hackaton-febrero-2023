@@ -9,7 +9,7 @@ def padres_home():
     if current_user.rol == 'padre':
         return render_template('padres/padres-menu.html')
     else:
-        return redirect(url_for('profesores.profes_home'))
+        return redirect(url_for('profesores/menu-profe.html'))
     
 @bp.route('/padres-menu')
 def padres_menu():
@@ -18,3 +18,8 @@ def padres_menu():
 @bp.route('/padres-libreta')
 def padres_libreta():
     return render_template('padres/padres-libreta.html')
+
+@bp.route('/padres-avisos')
+def padres_avisos():
+    return render_template('padres/recibidos-avisos.html')
+

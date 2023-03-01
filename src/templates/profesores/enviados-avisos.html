@@ -1,1 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>avisos enviados</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+    <script>
+        var socket = io();
+      </script>
+      <!-- A partir de aqui metanle el body de la pagina -->
+      <div class="font-sans">
+        <div class="flex flex-wrap min-h-screen sm:justify-center items-center h-full bg-gradient-to-tl from-purple-500 via-teal-600 to-purple-500 w-full py-16 px-4"> 
+            <!--agrego flex + flex-wrapgit y saque back bground gris, agg bg- degradado-->
+            <div class="relative  h-full ">
+                <div style="background-image: url('https://i.pinimg.com/originals/4a/66/38/4a6638db27116da54fd59b14a2d5c802.jpg');" class="flex-auto card bg-blue-300 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-3"></div>
+                <div style="background-image: url('https://i.pinimg.com/originals/4a/66/38/4a6638db27116da54fd59b14a2d5c802.jpg');" class = "flex-auto card bg-green-300 shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-3"></div>
+                <div  class="relative w-full h-full rounded-3xl  px-10 py-20 bg-indigo-200 shadow-md">
+                    <br> </br>
+                    <div class="block mt-0 mb-5 text-3xl text-black text-center font-bold font-serif">
+                        
+                            Historial de avisos
+                        
+                    </div>
+                    <section class="container mx-auto p-6 font-mono">
+                        <div class="w-full h-80 mb-8 ">
+                            <div class="h-80 overflow-y-scroll invisible hover:visible">
+                                <div class="visible">
+                                    <div class="w-full ">
+                            <table class="w-full">
+                              <thead>
+                                <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-indigo-200 shadow-md border-t border-gray-200">
+                                  <th class="px-4 py-3">Titulo</th>
+                                  <th class="px-4 py-3">Alumno</th>
+                                  <th class="px-4 py-3">Estatus</th>
+                                  <th class="px-4 py-3">Fecha</th>
+                                </tr>
+                              </thead>
+                              <tbody class="bg-indigo-200 shadow-md ">
+                                <tr class="text-gray-700">
+                                  <td class="px-4 py-3 border">
+                                    <div class="flex items-center text-sm">
+                                      
+                                        
+                                       
+                                      
+                                        <div>
+                                        <p class="font-semibold text-black">San Juan</p>
+                                        
+                                        </div>
+                                    </div>
+                                  </td>
+                                  <td class="px-4 py-3 text-ms font-semibold border">Pedro Jose</td>
+                                  <td class="px-4 py-3 text-xs border">
+                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Leido </span>
+                                  </td>
+                                  <td class="px-4 py-3 text-sm border">6/4/2000</td>
+                                </tr>
+                                <tr class="text-gray-700">
+                                  <td class="px-4 py-3 border">
+                                    <div class="flex items-center text-sm">
+                                     
+                                      <div>
+                                        <p class="font-semibold text-black">Pollada</p>
+                                        
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td class="px-4 py-3 text-md font-semibold border">Julio Vega</td>
+                                  <td class="px-4 py-3 text-xs border">
+                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Leido </span>
+                                  </td>
+                                  <td class="px-4 py-3 text-sm border">6/10/2020</td>
+                                </tr>
+                                <tr class="text-gray-700">
+                                  <td class="px-4 py-3 border">
+                                    <div class="flex items-center text-sm">
+                                      
+                                      <div>
+                                        <p class="font-semibold">Pollada</p>
+                                        
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td class="px-4 py-3 text-md font-semibold border">Juana Lopez</td>
+                                  <td class="px-4 py-3 text-xs border">
+                                    <span class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-sm"> Entregado </span>
+                                  </td>
+                                  <td class="px-4 py-3 text-sm border">6/10/2020</td>
+                                </tr>
+                                <tr class="text-gray-700">
+                                  <td class="px-4 py-3 border">
+                                    <div class="flex items-center text-sm">
+                                      
+                                      <div>
+                                        <p class="font-semibold">Examenes del mes</p>
+                                       
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td class="px-4 py-3 border text-md font-semibold">Alan Torres</td>
+                                  <td class="px-4 py-3 border text-xs">
+                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Leido </span>
+                                  </td>
+                                  <td class="px-4 py-3 border text-sm">6/10/2020</td>
+                                </tr>
+                                <tr class="text-gray-700">
+                                  <td class="px-4 py-3 border">
+                                    <div class="flex items-center text-sm">
+                                      
+                                      <div>
+                                        <p class="font-semibold">San Juan</p>
+                                       
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td class="px-4 py-3 border text-md font-semibold">Jose Martinez</td>
+                                  <td class="px-4 py-3 border text-xs">
+                                    <span class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-sm"> Entregado </span>
+                                  </td>
+                                  <td class="px-4 py-3 border text-sm">6/10/2020</td>
+                                </tr>
+                                <tr class="text-gray-700">
+                                  <td class="px-4 py-3 border">
+                                    <div class="flex items-center text-sm">
+                                      
+                                      <div>
+                                        <p class="font-semibold">San Juan</p>
+                                        
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td class="px-4 py-3 border text-md font-semibold">Matias Pedrozo</td>
+                                  <td class="px-4 py-3 border text-xs">
+                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Leido </span>
+                                  </td>
+                                  <td class="px-4 py-3 border text-sm">6/10/2020</td>
+                                </tr>
+                                <tr class="text-gray-700">
+                                  <td class="px-4 py-3 border">
+                                    <div class="flex items-center text-sm">
+                                     
+                                      <div>
+                                        <p class="font-semibold">Examenes del mes</p>
+                                    
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td class="px-4 py-3 border text-md font-semibold">Lidio Cardozo</td>
+                                  <td class="px-4 py-3 border text-xs">
+                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Leido </span>
+                                  </td>
+                                  <td class="px-4 py-3 border text-sm">6/10/2020</td>
+                                </tr>
+                                <tr class="text-gray-700">
+                                  <td class="px-4 py-3 border">
+                                    <div class="flex items-center text-sm">
+                                      
+                                      <div>
+                                        <p class="font-semibold">San Juan</p>
+                                        
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td class="px-4 py-3 border text-md font-semibold">Fabrizio Soza</td>
+                                  <td class="px-4 py-3 border text-xs">
+                                    <span class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-sm"> Entregado </span>
+                                  </td>
+                                  <td class="px-4 py-3 border text-sm">6/10/2020</td>
+                                </tr>
+                                <tr class="text-gray-700">
+                                  <td class="px-4 py-3 border">
+                                    <div class="flex items-center text-sm">
+                                      
+                                      <div>
+                                        <p class="font-semibold">Pollada</p>
+                                    
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td class="px-4 py-3 border text-md font-semibold">Julio Vera</td>
+                                  <td class="px-4 py-3 border text-xs">
+                                    <span class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-sm"> Entregado </span>
+                                  </td>
+                                  <td class="px-4 py-3 border text-sm">6/10/2020</td>
+                                </tr>
 
+                              </tbody>
+                              
+                            </table>
+                            
+                          </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <a href="{{url_for('profesores.menu_profe')}}" class="block text-center bg-emerald-400 text-black ml-4 w-40 py-3 rounded-2xl shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105">Volver</a>
+                      </section>
+                 
+                      
+                
+
+                        <br> </br>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+      
+</body>
+</html>

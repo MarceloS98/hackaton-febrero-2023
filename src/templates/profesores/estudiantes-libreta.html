@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Planillas-Estudiantes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body>
+    
+
+    <script>
+        var socket = io();
+      </script>
+      <!-- A partir de aqui metanle el body de la pagina -->
+      <div class="font-sans">
+        <div class="flex flex-wrap min-h-screen sm:justify-center items-center h-full bg-gradient-to-tl from-purple-500 via-teal-600 to-purple-500 w-full py-16 px-4"> 
+            <!--agrego flex + flex-wrapgit y saque back bground gris, agg bg- degradado-->
+            <div class="relative sm:max-w-sm w-full h-full ">
+                <div style="background-image: url('https://i.pinimg.com/originals/4a/66/38/4a6638db27116da54fd59b14a2d5c802.jpg');" class="flex-auto card bg-white-400 shadow-lg  w-full  h-full rounded-3xl absolute  transform -rotate-3"></div>
+                <div style="background-image: url('https://i.pinimg.com/originals/4a/66/38/4a6638db27116da54fd59b14a2d5c802.jpg');" class="flex-auto card bg-gradient-to-t shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-3"></div>
+                <div  class="relative w-full h-full rounded-3xl  px-10 py-20 bg-indigo-200 shadow-md">
+                    <br> </br>
+                
+                        
+                        <div>
+
+                            <label 
+                                        
+                                class="block mt-1 mb-16 text-4xl text-black text-center font-bold font-serif">
+                                Selecciona un estudiante
+                            </label>
+
+                                <div class="mt-4 mb-30 h-60 divide-y divide-gray-200 border-t border-b border-gray-200">
+                                    <div class=" h-60 overflow-y-scroll invisible hover:visible">
+
+                                            <ul class="divide-y divide-gray-100 visible">
+                                                <li class="p-3 hover:bg-emerald-300 hover:text-grey-200">
+                                                    Pedro Juan Caballer
+                                                </li>
+                                                <li class="p-3 hover:bg-emerald-300 hover:text-grey-200">
+                                                    Felipe Molas Lopez
+                                                </li>
+                                                <li class="p-3 hover:bg-emerald-300 hover:text-grey-200">
+                                                    Bernardino Caballero
+                                                </li>
+                                                <li class="p-3 hover:bg-emerald-300 hover:text-grey-200">
+                                                    Fulgencio Yegros
+                                                </li>
+                                                <li class="p-3 hover:bg-emerald-300 hover:text-grey-200">
+                                                Fulgencio Yegros
+                                                </li>
+                                                <li class="p-3 hover:bg-emerald-300 hover:text-grey-200">
+                                                Fulgencio Yegros
+                                                </li>
+                                                 <li class="p-3 hover:bg-emerald-300 hover:text-grey-200">
+                                                Fulgencio Yegros
+                                                </li>
+                                            </ul>
+                                    </div>
+                                </div>
+                       
+                  
+
+                                    <div class="flex flex-nowrap">
+                                        <a href="{{url_for('profesores.menu_profe')}}" class="block text-center py-3 w-40 text-xl bg-emerald-400 text-black rounded-2xl shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105 center m-2 my-10">Volver</a>
+                                        
+                                    </div>
+                                    
+
+                         </div>
+                                   
+                                </div>
+                                
+                            </div>
+
+                    <br> </br>
+                        
+                </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+      
+</body>
+</html>

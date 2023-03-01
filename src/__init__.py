@@ -1,6 +1,7 @@
 from flask import Flask 
 from config import Config
 from src.extentions import db, login_manager
+#from sqlalchemy import select, bindparam
 
 def create_app(config_class=Config):
 
@@ -36,12 +37,15 @@ def create_app(config_class=Config):
         return padre or profesor
 
     # Cargar datos en la db
-    # tamara = Profesor(name='Tamara Cantero', rol= 'profesor', ci=5975992, grupo='5A', password='tammy')
-    # diego = Padres(name='Diego Evers', nro_contacto='971777409', rol='padre',  ci=971777409, password='diego')
-
-    # with app.app_context():
-    #      db.create_all()
-    #      db.session.add_all([tamara, diego])
-    #      db.session.commit()
-
+    #tamara = Profesor(name='Tamara Cantero', rol= 'profesor', ci=5975992, grupo='5A', password='tammy')
+    #diego = Padres(name='Diego Evers', nro_contacto='971777409', rol='padre',  ci=971777409, password='diego')
+    """ tamara = Profesor(name='Tamara Cantero', rol= 'profesor', ci=5975992, grupo='5A', password='tammy')
+    diego = Padres(name='Diego Evers', nro_contacto='971777409', rol='padre',  ci=971777409, password='diego')
+    anahi = Alumnos(name_alumno='Anahi Centurion', ci_alumno='5528324', grupo='5A', tamara.query.with_entities(tamara.get_id).join(anahi))
+    #p.children.append(a)
+ """
+    with app.app_context():
+        db.create_all()
+        """ db.session.add_all([tamara, diego])
+        db.session.commit() """
     return app

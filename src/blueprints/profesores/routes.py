@@ -24,3 +24,28 @@ def estudiantes_avisos():
 @bp.route('/menu-profe')
 def menu_profe():
     return render_template('profesores/menu-profe.html')
+
+@bp.route('/enviados-avisos')
+def enviados_avisos():
+    return render_template('profesores/enviados-avisos.html')
+
+@bp.route('/estudiantes-avisos')
+def seleccionar_estudiantes():
+    return render_template('profesores/estudiantes-avisos.html')
+
+@bp.route('/check-avisos')
+def aviso_enviado():
+    return render_template('profesores/check-avisos.html')
+
+@bp.route('/libreta-profesor')
+def libreta_profesor():
+    return render_template('profesores/libreta-profesor.html')
+
+@bp.route('/check-libreta')
+def libreta_guardada():
+    return render_template('profesores/check-libreta.html')
+
+@bp.route('/plantilla-estudiantes')
+def seleccionar_estudiantes2():
+    return render_template('profesores/plantilla-estudiante.html')
+
