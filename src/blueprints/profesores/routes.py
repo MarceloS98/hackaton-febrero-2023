@@ -40,9 +40,9 @@ def estudiantes_avisos():
     if current_user.rol == 'profesor':
 
         if request.method == 'POST':
-            nro_padre_alumno = request.form.getlist('alumnos')[0]
+            nro_padre_alumno = request.form.getlist('alumnos')
             
-            send_sms( account_sid=account_sid, auth_token=auth_token ,to_number='+595972589778', body='Prueba de twilio')
+            send_sms( account_sid=account_sid, auth_token=auth_token ,to_number='+595972589778', body='Tu hijo falto encargados')
 
             return redirect(url_for('profesores.aviso_enviado'))
 
