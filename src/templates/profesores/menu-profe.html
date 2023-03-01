@@ -15,87 +15,91 @@
       >
         <!--agrego flex + flex-wrapgit y saque back bground gris, agg bg- degradado-->
         <div class="relative sm:max-w-sm w-full h-full">
-          <div class="relative sm:max-w-sm w-full h-full ">
-            <div style="background-image: url('https://i.pinimg.com/originals/4a/66/38/4a6638db27116da54fd59b14a2d5c802.jpg');" class="flex-auto card bg-white-400 shadow-lg  w-full  h-full rounded-3xl absolute  transform -rotate-3"></div>
-            <div style="background-image: url('https://i.pinimg.com/originals/4a/66/38/4a6638db27116da54fd59b14a2d5c802.jpg');" class="flex-auto card bg-gradient-to-t shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-3"></div>
-            <div  class="relative w-full h-full rounded-3xl mt-0  px-10 py-20 bg-indigo-200 shadow-md">
-                <br> </br>
-          
+          <div
+            style="
+              background-image: url('https://i.pinimg.com/originals/4a/66/38/4a6638db27116da54fd59b14a2d5c802.jpg');
+            "
+            class="flex-auto card bg-white-400 shadow-lg w-full h-full rounded-3xl absolute transform -rotate-3"
+          ></div>
+          <div
+            style="
+              background-image: url('https://i.pinimg.com/originals/4a/66/38/4a6638db27116da54fd59b14a2d5c802.jpg');
+            "
+            class="flex-auto card bg-gradient-to-t shadow-lg w-full h-full rounded-3xl absolute transform rotate-3"
+          ></div>
+          <div
+            class="relative w-full h-full rounded-3xl px-10 py-20 bg-indigo-200 shadow-md"
+          >
             <h1
-              class="font-bold text-center text-black font-serif decoration-dashed text-2xl ml-4"
+              class="block mt-0 text-3xl text-black text-center font-bold font-serif"
             >
               Menú de Profesores
             </h1>
             <br />
-            <img
-              class="h-[100px] w-[100px] mt-4 mx-auto mb-0"
-              src="https://cdn-icons-png.flaticon.com/512/1209/1209155.png?w=740&t=st=1677443223~exp=1677443823~hmac=2c97136af825ebd73daf97061119761a0b3f7d2dfa85145ead282e96c28fb71a"
-              alt="Logo Aviso"
-            />
 
             <!-- Padre -->
             <div class="mt-7 flex flex-col text-center gap-4">
               <!-- Boton Crear Avisos -->
               <a
                 href="{{ url_for('profesores.crear_aviso')}}"
-                class="block relative bg-emerald-400 text-black w-full py-3 rounded-xl shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
+                class="py-3 w-64 center mt-auto mb-1 m-5 text-xl bg-emerald-400 text-black rounded-2xl shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
               >
-                <div class="flex flex-col gap-1 justify-center items-center">
-                  <div class="w-10 h-10 flex-shrink-0 ml-2 mr-2 sm:mr-3">
+                <div class="flex flex-col gap-1 items-center">
+                  <div class="w-8 h-8 flex-shrink-0 ml-2 mr-2 sm:mr-3">
                     <img
-                      class="rounded-t-full"
+                      class="rounded-full"
                       src="https://cdn-icons-png.flaticon.com/512/921/921545.png?w=740&t=st=1677447730~exp=1677448330~hmac=6105eaf22e2e432bb40d9d25329f1d19256869267c0ab3ec64ce825687106863"
-                      width="60"
-                      height="60"
+                      width="45"
+                      height="40"
                       alt="Imagen Crear Avisos"
                     />
                   </div>
                 </div>
                 Crear Avisos
               </a>
-              <a
-                href="{{ url_for('profesores.enviados_avisos') }}"
-                class="block relative bg-emerald-400 text-black w-full py-3 rounded-xl shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
+              <a href="{{url_for('profesores.enviados_avisos')}}"
+                class="py-3 w-64 center mt-auto mb-1 m-5 text-xl bg-emerald-400 text-black rounded-2xl shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
               >
                 <div class="flex flex-col gap-1 justify-center items-center">
-                  <div class="w-10 h-10 flex-shrink-0 ml-2 mr-2 sm:mr-3">
+                  <div class="w-8 h-8 flex-shrink-0 ml-2 mr-2 sm:mr-3">
                     <img
                       class="rounded-t-full"
                       src="https://cdn-icons-png.flaticon.com/512/888/888687.png?w=740&t=st=1677447606~exp=1677448206~hmac=5c73996b7ef29dc6525742b4a2a916e82e1f32fb71949c8d0ded1debe340580f"
-                      width="60"
-                      height="60"
+                      width="45"
+                      height="40"
                       alt="Imagen Crear Avisos"
                     />
                   </div>
                 </div>
                 Ver Avisos
               </a>
-              <a
-                href="{{url_for('profesores.seleccionar_estudiantes2')}}"
-                class="block relative bg-emerald-400 text-black w-full py-3 rounded-xl shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
+              <a href="{{url_for('profesores.seleccionar_estudiantes2')}}"
+                
+                class="py-3 w-64 center mt-auto m-5 mb-1 text-xl bg-emerald-400 text-black rounded-2xl shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
               >
                 <div class="flex flex-col gap-1 justify-center items-center">
-                  <div class="w-10 h-10 flex-shrink-0 ml-2 mr-2 sm:mr-3">
+                  <div class="w-8 h-8 flex-shrink-0 ml-2 mr-2 sm:mr-3">
                     <img
                       class="rounded-t-full"
                       src="https://cdn-icons-png.flaticon.com/512/1250/1250544.png?w=740&t=st=1677592380~exp=1677592980~hmac=a2b4abad8334f071ff1d5347a27d9c464d1a1db8e0598a438285b7024c20ba80"
-                      width="60"
-                      height="60"
+                      width="50"
+                      height="30"
                       alt="Imagen Crear Avisos"
                     />
                   </div>
                 </div>
-                Cargar Planillas
+                Cargar o editar Planillas
               </a>
               <br />
             </div>
             <br />
-            <a
-              href="{{ url_for('profesores.bienvenido_profesor')}}"
-              class="block bg-emerald-400 py-3 w-32 rounded-2xl shadow-xl hover:shadow-inner focus:outline-none text-center transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
-            >
-              Volver
+            <div class="text-center">
+              <a href="{{ url_for('profesores.bienvenido_profesor')}}"
+                class="block bg-emerald-400 text-black ml-auto w-40 py-3 rounded-2xl shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105 mr-40 mt-1"
+              >
+                Volver
             </a>
+            </div>
           </div>
         </div>
       </div>
